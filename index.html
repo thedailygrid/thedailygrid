@@ -32,13 +32,13 @@
     }
     .date-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 16px;
     }
     .date-card {
       background: #fff;
       border-radius: 12px;
-      padding: 16px;
+      padding: 12px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.08);
       cursor: pointer;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -89,22 +89,32 @@
 
   <div class="container">
     <div class="date-list">
-      <div class="date-card" onclick="openPuzzle('13 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=6453f772&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
-        <h3>13 Jan 2026</h3>
+     	
+	  <div class="date-card" onclick="openPuzzle('17 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bd2c4b1c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Jan 2026</h3>
         <span>Mini Crossword</span>
-      </div>
-      <div class="date-card" onclick="openPuzzle('14 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b071419d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
-        <h3>14 Jan 2026</h3>
-        <span>Mini Crossword</span>
-      </div>
-      <div class="date-card" onclick="openPuzzle('15 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=20ddcf45&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
-        <h3>15 Jan 2026</h3>
-        <span>Mini Crossword</span>
-      </div>
+	  </div>
 	  <div class="date-card" onclick="openPuzzle('16 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c6621c6c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
         <h3>16 Jan 2026</h3>
         <span>Mini Crossword</span>
+		</div>
+	  <div class="date-card" onclick="openPuzzle('15 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=20ddcf45&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Jan 2026</h3>
+        <span>Mini Crossword</span>
+		
       </div>
+	  <div class="date-card" onclick="openPuzzle('14 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b071419d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 Jan 2026</h3>
+        <span>Mini Crossword</span>
+		
+      </div>
+	   <div class="date-card" onclick="openPuzzle('13 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=6453f772&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Jan 2026</h3>
+        <span>Mini Crossword</span>
+      </div>
+	  
+      
+      
     </div>
 
     <div id="puzzleView" class="puzzle-view">
@@ -119,11 +129,16 @@
 
   <script>
     function openPuzzle(date, url) {
-      document.getElementById('puzzleDate').innerText = date;
-      document.getElementById('puzzleFrame').src = url;
-      document.getElementById('puzzleView').style.display = 'block';
-      window.scrollTo({ top: document.getElementById('puzzleView').offsetTop - 20, behavior: 'smooth' });
-    }
+    document.getElementById('puzzleDate').innerText = date;
+    document.getElementById('puzzleFrame').src = url;
+    document.getElementById('puzzleView').style.display = 'block';
+  }
+
+  // Auto-open the latest crossword
+  document.addEventListener('DOMContentLoaded', () => {
+    const firstCard = document.querySelector('.date-card');
+    if (firstCard) firstCard.click();
+  });
   </script>
 </body>
 </html>
