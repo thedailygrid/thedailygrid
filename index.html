@@ -86,7 +86,18 @@
       gap: 12px;
     }
   }
+  #seeMoreLink {
+    font-size: 14px;
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  #seeMoreLink:hover {
+    text-decoration: underline;
+  }
   </style>
+  
 </head>
 <body>
   <header>
@@ -168,6 +179,10 @@
       
       
     </div>
+	
+	<div id="seeMoreContainer" style="text-align:center; margin-top:16px;">
+  <a href="#" id="seeMoreLink">See older grids ↓</a>
+</div>
 
     <div id="puzzleView" class="puzzle-view">
       <h2 id="puzzleDate"></h2>
@@ -180,17 +195,49 @@
   </footer>
 
   <script>
-    function openPuzzle(date, url) {
+  const VISIBLE_COUNT = 6;
+  let currentlyVisible = VISIBLE_COUNT;
+
+  function openPuzzle(date, url) {
     document.getElementById('puzzleDate').innerText = date;
     document.getElementById('puzzleFrame').src = url;
     document.getElementById('puzzleView').style.display = 'block';
   }
 
-  // Auto-open the latest crossword
   document.addEventListener('DOMContentLoaded', () => {
-    const firstCard = document.querySelector('.date-card');
-    if (firstCard) firstCard.click();
+    const cards = document.querySelectorAll('.date-card');
+
+    // Hide all except first 6
+    cards.forEach((card, index) => {
+      if (index >= VISIBLE_COUNT) {
+        card.style.display = 'none';
+      }
+    });
+
+    // Auto-open latest
+    if (cards.length > 0) {
+      cards[0].click();
+    }
+
+    // See more logic
+    document.getElementById('seeMoreLink').addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const nextVisible = currentlyVisible + VISIBLE_COUNT;
+      cards.forEach((card, index) => {
+        if (index < nextVisible) {
+          card.style.display = 'block';
+        }
+      });
+
+      currentlyVisible = nextVisible;
+
+      // Hide link if all cards are shown
+      if (currentlyVisible >= cards.length) {
+        document.getElementById('seeMoreContainer').style.display = 'none';
+      }
+    });
   });
-  </script>
+</script>
 </body>
 </html>
