@@ -56,6 +56,45 @@
       font-size: 11px;
       color: #666;
     }
+	.theme-card {
+  border: 2px solid #ff9800;
+  background: linear-gradient(135deg, #fff8e7, #fff3cd);
+  position: relative;
+}
+
+.theme-card:hover {
+  box-shadow: 0 12px 24px rgba(255,152,0,0.25);
+}
+
+.theme-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff9800;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.theme-name {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff6f00;
+}
+.theme-banner {
+  background: #fff3cd;
+  color: #7a5200;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #ffe69c;
+}
     .puzzle-view {
       margin-top: 32px;
       background: #fff;
@@ -135,6 +174,9 @@
     <h1>The Daily Grid</h1>
     <p>Mini Crosswords • One puzzle a day • Built with love</p>
   </header>
+  <div class="theme-banner">
+  🎉 Every Sunday features a special themed crossword!
+</div>
 
   <div class="container">
     <div class="date-list">
@@ -149,9 +191,11 @@
         <span>Mini Crossword</span>
 	  </div>
 		
-<div class="date-card" onclick="openPuzzle('17 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7c50712d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+<div class="date-card theme-card" onclick="openPuzzle('17 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7c50712d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Double Trouble')">
+		<div class="theme-badge">SUNDAY THEME</div>
         <h3>17 May 2026</h3>
         <span>Mini Crossword</span>
+		<span class="theme-name">Double Trouble</span>
 	  </div>
 		
 <div class="date-card" onclick="openPuzzle('16 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7c874c5e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
@@ -817,11 +861,17 @@
   const VISIBLE_COUNT = 6;
   let currentlyVisible = VISIBLE_COUNT;
 
-  function openPuzzle(date, url) {
-    document.getElementById('puzzleDate').innerText = date;
-    document.getElementById('puzzleFrame').src = url;
-    document.getElementById('puzzleView').style.display = 'block';
-  }
+  function openPuzzle(date, url, theme = '') {
+
+  const title = theme
+    ? `${date} • Sunday Theme: ${theme}`
+    : date;
+
+  document.getElementById('puzzleDate').innerText = title;
+
+  document.getElementById('puzzleFrame').src = url;
+  document.getElementById('puzzleView').style.display = 'block';
+}
 
   document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.date-card');
