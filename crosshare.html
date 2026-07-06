@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Mini Crosswords</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: #fff;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .date-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .date-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .date-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    }
+    .date-card h3 {
+      margin: 0 0 4px 0;
+      color: #2575fc;
+	  font-size: 14px;
+    }
+    .date-card span {
+      font-size: 11px;
+      color: #666;
+    }
+	.theme-card {
+  border: 2px solid #ff9800;
+  background: linear-gradient(135deg, #fff8e7, #fff3cd);
+  position: relative;
+}
+
+.theme-card:hover {
+  box-shadow: 0 12px 24px rgba(255,152,0,0.25);
+}
+
+.theme-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff9800;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+}
+
+.theme-name {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #ff6f00;
+}
+.theme-banner {
+  background: #fff3cd;
+  color: #7a5200;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #ffe69c;
+}
+    .puzzle-view {
+      margin-top: 32px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      display: none;
+    }
+    .puzzle-view h2 {
+      margin: 0 0 12px 0;
+	  color: #333;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    iframe {
+      width: 100%;
+      height: 720px;
+      border: none;
+      border-radius: 10px;
+	  background: #fff;
+	  margin-top: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      margin: 32px 0 16px;
+    }
+	@media (max-width: 600px) {
+    .date-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+  #seeMoreLink {
+    font-size: 14px;
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  #seeMoreLink:hover {
+    text-decoration: underline;
+  }
+  .whatsapp-join {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: #25D366;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.whatsapp-join:hover {
+  background: #1ebe5d;
+}
+.whatsapp-share {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #25D366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.whatsapp-share:hover {
+  text-decoration: underline;
+}
+  </style>
+  
+</head>
+<body>
+  <header>
+    <h1>The Daily Grid</h1>
+    <p>Mini Crosswords • One puzzle a day • Built with love</p>
+  </header>
+  <div class="theme-banner">
+  🎉 Every Sunday features a special themed crossword!
+</div>
+
+
+<div class="container">
+    <div class="date-list">
+
+<div class="date-card" onclick="openPuzzle('6 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=13ac0450&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 Jul 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card theme-card" onclick="openPuzzle('5 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=31e94a38&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Animated Movie Characters')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>5 Jul 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Animated Movie Characters</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('4 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b2d48d19&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 Jul 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card" onclick="openPuzzle('3 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=72aaf947&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 Jul 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card" onclick="openPuzzle('2 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=0bfb82d6&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 Jul 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card" onclick="openPuzzle('1 Jul 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4ef6ee3f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 Jul 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card" onclick="openPuzzle('30 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=44e54223&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>30 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>	
+		
+<div class="date-card" onclick="openPuzzle('29 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5961422f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>29 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>		
+
+		
+<div class="date-card theme-card" onclick="openPuzzle('28 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3f2472f2&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Country Capitals')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>28 Jun 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Country Capitals</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('27 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7d977009&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>		
+		
+<div class="date-card" onclick="openPuzzle('26 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5a23bc4e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>		
+
+		
+<div class="date-card" onclick="openPuzzle('25 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4a53b10a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>		
+		
+<div class="date-card" onclick="openPuzzle('24 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=01bcb0e9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>24 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('23 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d3544cac&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('22 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ce87af9b&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card theme-card" onclick="openPuzzle('21 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b0d2d0ef&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Compound Words')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>21 Jun 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Compound Words</span>
+	  </div>
+		
+
+<div class="date-card" onclick="openPuzzle('20 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=aa05219a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('19 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=26335c34&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('18 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=846d4fda&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('17 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=81454803&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('16 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9dcefaf9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('15 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=66a25368&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card theme-card" onclick="openPuzzle('14 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=91d6f4da&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Animal Kingdom')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>14 Jun 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Animal Kingdom</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('13 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=91dee8b5&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+
+<div class="date-card" onclick="openPuzzle('12 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5d96af53&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>12 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('11 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ced57bd4&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>11 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('10 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=8cefa86c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>10 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('9 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=abcc1627&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>9 Jun 2026</h3>
+        <span>Mini Crossword</span>
+ </div>
+		
+<div class="date-card" onclick="openPuzzle('8 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=511bce51&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>8 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+		
+<div class="date-card theme-card" onclick="openPuzzle('7 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bf2d8325&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Rhyming Words')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>7 Jun 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Rhyming Words</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('6 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bd360f24&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('5 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3f52a559&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>5 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('4 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b178ffd1&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('3 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4fdb189d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('2 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c521c4cc&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+		
+<div class="date-card" onclick="openPuzzle('1 Jun 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=959af970&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 Jun 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+		
+<div class="date-card theme-card" onclick="openPuzzle('31 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=adcad8f2&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Silent Letters')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>31 May 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Silent Letters</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('30 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=51a9724e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>30 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+
+<div class="date-card" onclick="openPuzzle('29 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9b8f922f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>29 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+		
+<div class="date-card" onclick="openPuzzle('28 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=a3979335&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>28 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>		
+		
+<div class="date-card" onclick="openPuzzle('27 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d6ff9799&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('26 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=241aca97&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('25 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c442c67e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card theme-card" onclick="openPuzzle('24 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c030061f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Palindromes')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>24 May 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Palindromes</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('23 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=75b3999f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('22 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=387fc1fd&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+		
+<div class="date-card" onclick="openPuzzle('21 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d1676387&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>21 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>		
+		
+<div class="date-card" onclick="openPuzzle('20 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=70f19e6d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('19 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=fe0e9350&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('18 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=62140e9b&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card theme-card" onclick="openPuzzle('17 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7c50712d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8', 'Double Trouble')">
+		<div class="theme-badge">SUNDAY THEME</div>
+        <h3>17 May 2026</h3>
+        <span>Mini Crossword</span>
+		<span class="theme-name">Double Trouble</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('16 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7c874c5e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('15 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=af146a85&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('14 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=541ccfe1&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('13 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=77f50887&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('12 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c10c0670&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>12 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('11 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=06affcaa&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>11 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('10 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=37ca28bf&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>10 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('9 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=74fa576a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>9 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>		
+		
+<div class="date-card" onclick="openPuzzle('8 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bf098b95&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>8 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('7 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3beaf411&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>7 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('6 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=eb269183&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('5 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=74e0a5d8&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>5 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('4 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=a6d5e35e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('3 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=f16dd746&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('2 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5db44836&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('1 May 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=dcaff1a9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 May 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('30 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c3b201eb&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>30 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('29 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=0179075e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>29 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('28 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b8416a8b&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>28 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('27 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3903306d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('26 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=434962ca&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('25 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3f3f43ba&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('24 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9ae4a56f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>24 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+		
+<div class="date-card" onclick="openPuzzle('23 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bdcd9771&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('22 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=99d6d245&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('21 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9b0963c1&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>21 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('20 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=be7ec48e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('19 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=09e2af7a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('18 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b8b592bb&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('17 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7a2980c3&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('16 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9d4741a9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('15 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b1a3694a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('14 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ebd69483&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('13 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=527bd15a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('12 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=1ef9a5af&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>12 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('11 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c7325ba0&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>11 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('10 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b5c43f0c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>10 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('9 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b01f7a56&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>9 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('8 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=cc249ebf&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>8 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('7 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=160f6bb2&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>7 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('6 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=31dde9fa&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('5 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=f4b8b66e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>5 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('4 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9fa2cc05&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('3 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=89058d27&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('2 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=8c4ab8dc&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('1 Apr 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=446a673f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 Apr 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+		
+<div class="date-card" onclick="openPuzzle('31 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d17d59ba&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>31 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('30 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=520e0822&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>30 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('29 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5fbe8744&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>29 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+
+<div class="date-card" onclick="openPuzzle('28 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=825fb67c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>28 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('27 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=84462145&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+
+<div class="date-card" onclick="openPuzzle('26 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=02f98053&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+
+<div class="date-card" onclick="openPuzzle('25 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=a216e960&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('24 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4e4d7c04&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>24 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('23 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=019beaa9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('22 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=5e828417&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+
+<div class="date-card" onclick="openPuzzle('21 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=11c667f4&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>21 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('20 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=25cc4b3f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('19 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=efef39cd&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('18 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=92733003&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('17 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c6cf129e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('16 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=a7055b7f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('15 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=f369ffc5&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('14 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=89c7439e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('13 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=101e3fd0&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('12 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4046e1eb&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>12 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('11 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9a232333&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>11 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('10 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ff8708ab&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>10 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('9 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e538e199&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>9 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('8 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=128ca6b0&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>8 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('7 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3b9b7976&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>7 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('6 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c0da0c65&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('5 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=604afd0c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>5 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('4 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4e0f0378&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('3 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=32547b0c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('2 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=8fcd1555&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('1 Mar 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=736436be&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 Mar 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('28 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=23aea396&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>28 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('27 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=429a4726&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('26 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=4a6704a8&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('25 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=93f69d6d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('24 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ca5fbe8f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>24 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('23 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e2f52c0c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	<div class="date-card" onclick="openPuzzle('22 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=63c8c42f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('21 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e46a2e03&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>21 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('20 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=2ef91541&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('19 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=0c6f437c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('18 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c88685f3&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('17 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=70d0eb99&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('16 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d595f527&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('15 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=085a9e70&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('14 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=2d14e2ee&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('13 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=f4c4d18d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('12 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=f78acad7&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>12 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('11 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=2d792ed9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>11 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('10 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=56e51f80&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>10 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('9 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b3eb0252&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>9 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('8 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=be1b3afb&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>8 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('7 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e8873531&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>7 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('6 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=909754df&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>6 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('5 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e7416480&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>5 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('4 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=28fe9b50&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>4 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('3 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=58224d23&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>3 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('2 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3785e4e3&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>2 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	
+	<div class="date-card" onclick="openPuzzle('1 Feb 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=a516b0ca&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>1 Feb 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('31 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=526b7558&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>31 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('30 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=ffd9322a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>30 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('29 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=915f5552&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>29 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	<div class="date-card" onclick="openPuzzle('28 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9b783d5f&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>28 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	<div class="date-card" onclick="openPuzzle('27 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=7a34155a&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>27 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('26 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=523ab729&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>26 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('25 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=d450dc79&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>25 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('24 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=896f9323&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>24 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('23 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=3812eb84&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>23 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	
+	<div class="date-card" onclick="openPuzzle('22 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=9556d16e&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>22 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	<div class="date-card" onclick="openPuzzle('21 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=2689a1b9&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>21 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+	
+	<div class="date-card" onclick="openPuzzle('20 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=dead5cb4&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>20 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>	
+	
+     <div class="date-card" onclick="openPuzzle('19 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b109a9c4&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>19 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	 <div class="date-card" onclick="openPuzzle('18 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=e6c760e0&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>18 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  
+	  <div class="date-card" onclick="openPuzzle('17 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=bd2c4b1c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>17 Jan 2026</h3>
+        <span>Mini Crossword</span>
+	  </div>
+	  <div class="date-card" onclick="openPuzzle('16 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=c6621c6c&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>16 Jan 2026</h3>
+        <span>Mini Crossword</span>
+		</div>
+	  <div class="date-card" onclick="openPuzzle('15 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=20ddcf45&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>15 Jan 2026</h3>
+        <span>Mini Crossword</span>
+		
+      </div>
+	  <div class="date-card" onclick="openPuzzle('14 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=b071419d&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>14 Jan 2026</h3>
+        <span>Mini Crossword</span>
+		
+      </div>
+	   <div class="date-card" onclick="openPuzzle('13 Jan 2026', 'https://puzzleme.amuselabs.com/pmm/crossword?id=6453f772&set=cc8d09da2b1b61f7a5a29150ddd5580095e78c97456f2b5d8230b98713fdc7d8')">
+        <h3>13 Jan 2026</h3>
+        <span>Mini Crossword</span>
+      </div>
+	  
+      
+      
+    </div>
+	
+	<div id="seeMoreContainer" style="text-align:center; margin-top:16px;">
+  <a href="#" id="seeMoreLink">See older grids ↓</a>
+</div>
+
+    <div id="puzzleView" class="puzzle-view">
+      <h2 id="puzzleDate"></h2>
+      <iframe id="puzzleFrame" src=""></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>New crossword added daily • Share with friends 🧩</p>
+	<div style="margin-top:12px;">
+  <a
+    class="whatsapp-join"
+    href="https://chat.whatsapp.com/LpAg39aAgIZDNySSq2qeaj"
+    target="_blank"
+  >
+    Join our WhatsApp Crossword Community 🧩
+  </a>
+</div>
+<div style="margin-top:10px;">
+  <a
+    class="whatsapp-share"
+    href="https://wa.me/?text=I%E2%80%99m%20playing%20today%E2%80%99s%20mini%20crossword%20on%20The%20Daily%20Grid!%20Try%20it%20here:%20thedailygrid.github.io/thedailygrid/"
+    target="_blank"
+  >
+    Share today’s crossword on WhatsApp →
+  </a>
+</div>
+  </footer>
+
+  <script>
+  const VISIBLE_COUNT = 6;
+  let currentlyVisible = VISIBLE_COUNT;
+
+  function openPuzzle(date, url, theme = '') {
+
+  const title = theme
+    ? `${date} • Sunday Theme: ${theme}`
+    : date;
+
+  document.getElementById('puzzleDate').innerText = title;
+
+  document.getElementById('puzzleFrame').src = url;
+  document.getElementById('puzzleView').style.display = 'block';
+}
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.date-card');
+
+    // Hide all except first 6
+    cards.forEach((card, index) => {
+      if (index >= VISIBLE_COUNT) {
+        card.style.display = 'none';
+      }
+    });
+
+    // Auto-open latest
+    if (cards.length > 0) {
+      cards[0].click();
+    }
+
+    // See more logic
+    document.getElementById('seeMoreLink').addEventListener('click', (e) => {
+      e.preventDefault();
+
+      const nextVisible = currentlyVisible + VISIBLE_COUNT;
+      cards.forEach((card, index) => {
+        if (index < nextVisible) {
+          card.style.display = 'block';
+        }
+      });
+
+      currentlyVisible = nextVisible;
+
+      // Hide link if all cards are shown
+      if (currentlyVisible >= cards.length) {
+        document.getElementById('seeMoreContainer').style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
