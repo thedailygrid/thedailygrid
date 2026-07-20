@@ -1129,7 +1129,7 @@
   document.getElementById('puzzleDate').innerText = title;
 
   // Build the Crosshare embed URL automatically
-  const embedUrl = `https://crosshare.org/embed/${puzzleId}`;
+  const embedUrl = `https://crosshare.org/embed/${puzzleId}?play=true`;
 
   document.getElementById('puzzleFrame').src = embedUrl;
   document.getElementById('puzzleView').style.display = 'block';
